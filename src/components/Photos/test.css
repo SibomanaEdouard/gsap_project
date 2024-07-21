@@ -1,0 +1,229 @@
+
+.photos {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 184px;
+}
+
+.photos-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 192px;
+  width: 212px;
+}
+
+.photo {
+  width: 100%;
+  transition: all 0.48s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.notActive {
+  transform: scale(0.9);
+}
+
+.active {
+  transform: scale(1.3);
+}
+
+.title {
+  position: fixed;
+  margin: auto;
+
+  font-family: "Shippori Mincho", serif;
+  width: 100%;
+  z-index: 4;
+  color: #979797;
+  font-size: 44px;
+  line-height: 54px;
+  bottom: 0;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 2232px) {
+  .photos {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    transform: translate(0px, -250px);
+    transition: 1.5s, ease-out;
+
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 192px;
+  }
+
+  .photos-column {
+    position: relative;
+    flex: 25%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 192px;
+    width: 212px;
+    margin-top: 50px;
+  }
+
+  .photo {
+    width: 100%;
+  }
+
+  .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    /* width: 1440px; */
+    height: 100vh;
+  }
+
+  .photoText-container{
+    width: 1000px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .photos {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-375px, -783px);
+    transition: 1.5s, ease-out;
+
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 184px;
+  }
+
+  .photos-column {
+    position: relative;
+    flex: 25%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 192px;
+    width: 212px;
+    margin-top: 100px;
+  }
+
+  .photo {
+    width: 100%;
+  }
+
+  .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    width: 1440px;
+    height: 100vh;
+  }
+}
+
+.hamburger-icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-line {
+  width: 50%;
+  height: 1px;
+  background-color: white;
+}
+
+.hamburger-line:first-of-type {
+  margin-bottom: 5px;
+}
+
+
+.content__img {
+	max-width: 200px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+@media screen and (min-width: 50em) {
+	body {
+		overflow: hidden;
+	}
+	.content {
+		height: 100vh;
+		overflow: hidden;
+	}
+}
+
+
+
+
+
+
+
+.itemInfo-container p:first-child {
+  margin: 0;
+  padding-bottom: 12px;
+  color: #909090;
+  font-size: 14px;
+  line-height: 22px;
+text-align: left;}
+
+
+.itemInfo-container p:last-child {
+  padding-left: 20px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 22px;
+  padding-bottom: 40px;
+  text-align: left;
+  width: 298px;
+}
+
+.photoText-container {
+display: flex;
+flex-direction: row;
+gap: 191px;
+}
+
+.itemView {
+  padding-top: 30px;
+  top: 250px;
+  position: relative;
+}
+
+.itemView-photo {
+ margin-top: 60px;
+ width: 580px;
+ height: auto;
+}
+
+
+.top-text {
+  padding-left: 184px;
+}  
+
+.trail-photo {
+  position: absolute;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: transform, opacity;
+  animation: fadeOut 1s forwards;
+  width: 100px;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}

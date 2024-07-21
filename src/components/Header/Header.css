@@ -1,0 +1,65 @@
+.header {
+  position: fixed;
+  display: flex;
+
+  /* margin: auto; */
+  justify-content: center;
+  height: 50vh;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.header-text {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  position: absolute;
+  margin: auto;
+  z-index: 2;
+  bottom: 0px;
+  width: 1440px;
+  padding-inline: 20px;
+}
+
+.header-title {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+
+  margin-bottom: 5px;
+  gap: 80px;
+  font-family: "Shippori Mincho", serif;
+}
+
+@media (max-width: 1440px) {
+  .header-text {
+    width: 1440px;
+  }
+}
+
+@media (min-width: 2232px) {
+  .header-text {
+    width: 2192px;
+  }
+}
+
+@media (min-width: 2233px) {
+  .header-text {
+    width: 2192px;
+  }
+}
+
+

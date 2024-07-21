@@ -1,0 +1,297 @@
+.main-cursor,
+.secondary-cursor {
+  z-index: 10000;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.main-cursor {
+  transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1);
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+  mix-blend-mode: difference;
+}
+
+.main-cursor .main-cursor-background {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+}
+
+.secondary-cursor {
+  width: 60px;
+  height: 60px;
+}
+
+.secondary-cursor .cursor-background {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: relative;
+}
+
+.secondary-cursor .cursor-background:after,
+.secondary-cursor .cursor-background:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+.secondary-cursor .cursor-background:before {
+  left: 10px;
+}
+
+.secondary-cursor .cursor-background:after {
+  right: 10px;
+}
+
+.slider-drag .cursor-background {
+  animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+    bgUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+.slider-drag .cursor-background:after {
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+    translateRightDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+.slider-drag .cursor-background:before {
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+    translateLeftDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+.slider-drag .main-cursor {
+  animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+.hamburger .cursor-background {
+  animation: scaleUp 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+.hamburger .main-cursor-background {
+  animation: fadeOut 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+
+.hamburger .main-cursor-background {
+  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+.link .main-cursor-background {
+  animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+
+.link .cursor-background {
+  animation: scaleDownLink 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+}
+
+@keyframes scaleDownLink {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes scaleUpLink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bgUp {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: black;
+  }
+}
+
+@keyframes bgDown {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.7);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes translateLeftDot {
+  from {
+    transform: translate(20px, -50%);
+  }
+  to {
+    transform: translate(0px, -50%);
+  }
+}
+
+@keyframes translateRightDot {
+  from {
+    transform: translate(-20px, -50%);
+  }
+  to {
+    transform: translate(0px, -50%);
+  }
+}
+
+@import url("https://unpkg.com/open-props/normalize.min.css");
+@import url("https://unpkg.com/open-props/open-props.min.css");
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  /* display: grid;
+  place-items: center;
+  align-content: center;
+  overflow: hidden; */
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: "Google Sans", sans-serif, system-ui;
+  accent-color: var(--red-6);
+}
+
+pre {
+  padding: var(--size-2);
+  overflow: auto;
+}
+
+ul:not(.closed) > .code-block {
+  height: auto !important;
+  line-height: 1 !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+*:focus-visible {
+  outline-color: var(--red-6);
+}
+
+input::selection {
+  background: var(--red-6);
+  color: var(--text-1);
+  background: hsl(0 100% 50%);
+  color: hsl(0 0% 100%);
+}
+
+form {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  gap: 0.5rem 1rem;
+  justify-content: center;
+}
+
+:where(p, ul, ol, dl, h6) {
+  font-size: var(--font-size-0);
+}
+
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor-text {
+  position: absolute;
+  font-size: 14px;
+  user-select: none;
+  pointer-events: none;
+  animation: animate 7s linear infinite, opacity 1s linear;
+  top: 30px;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cursor-text span {
+  top: -50px;
+  position: absolute;
+  display: inline-block;
+  transform-origin: 0 50px;
+}
