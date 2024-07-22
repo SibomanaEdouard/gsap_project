@@ -1,0 +1,14 @@
+/* src/components/Gallery.css */
+.gallery {
+    display: flex;
+    overflow: hidden;
+    width: 1440px;
+    border: 2px solid red;
+    height: 500px;
+  }
+  
+  .gallery img {
+    margin: 0 10px;
+    max-width: 300px;
+  }
+  
