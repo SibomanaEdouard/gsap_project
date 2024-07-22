@@ -175,24 +175,6 @@ function Photos({ activePhoto, setActivePhoto, togglePhotos }) {
           backgroundColor: "#fff",
         }
       );
-
-      // setTimeout(() => {
-      //   gsap.fromTo(
-      //     ".itemInfo-container p",
-          
-      //     {
-      //       yPercent: 1,
-      //       ease: "expo.inOut",
-      //     },
-      //     {
-      //       color: "green",
-      //       duration: 1,
-      //       translateY: "100%",
-      //       ease: "expo.inOut",
-      //     },
-          
-      //   );
-      // }, 6000);
     
     }
   }, [togglePhotos]);
